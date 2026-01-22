@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBS_AMAZÔNIA | Protótipo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-papel: #F4F1EA;
+            --cor-jenipapo: #2A2A2A;
+            --cor-urucum: #B33F24;
+            --cor-copaiba: #556B2F;
+            --borda: 1.5px solid var(--cor-jenipapo);
+        }
+
+        body {
+            background-color: var(--cor-papel);
+            color: var(--cor-jenipapo);
+            font-family: 'Lora', serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Estética de Grão sutil no fundo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        header {
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: var(--borda);
+        }
+
+        .logo {
+            font-family: 'Space Mono', monospace;
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: -1px;
+        }
+
+        nav a {
+            font-family: 'Space Mono', monospace;
+            text-decoration: none;
+            color: var(--cor-jenipapo);
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .hero {
+            padding: 4rem 2rem;
+            max-width: 900px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--cor-urucum);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .grid-mulheres {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .card {
+            border: var(--borda);
+            padding: 1rem;
+            background: rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            background: var(--cor-papel);
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 0px var(--cor-copaiba);
+        }
+
+        .foto-placeholder {
+            width: 100%;
+            height: 200px;
+            background: #ddd;
+            filter: grayscale(100%) sepia(20%);
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .card-info h3 {
+            margin: 0.5rem 0;
+            font-family: 'Space Mono', monospace;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .card-info p {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-escutar {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border: var(--borda);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: var(--cor-jenipapo);
+            transition: background 0.2s;
+        }
+
+        .btn-escutar:hover {
+            background: var(--cor-jenipapo);
+            color: var(--cor-papel);
+        }
+
+        footer-player {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: var(--cor-papel);
+            border-top: var(--borda);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+        }
+
+        .onda-sonora {
+            height: 20px;
+            width: 100px;
+            background: repeating-linear-gradient(90deg, var(--cor-copaiba), var(--cor-copaiba) 2px, transparent 4px, transparent 8px);
+            margin-left: 2rem;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">OBS_AMAZÔNIA // #LUZ_E_ESCUTA</div>
+    <nav>
+        <a href="#">[ Territórios ]</a>
+        <a href="#">[ Vozes ]</a>
+        <a href="#">[ Sobre ]</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Vozes da Floresta:<br>Protagonismo Feminino</h1>
+    <p>Um repositório de tecnologias ancestrais e práticas comunicacionais de mulheres negras e indígenas na Amazônia Legal.</p>
+</section>
+
+<main class="grid-mulheres">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?auto=format&fit=crop&w=400&q=80" class="foto-placeholder" alt="Comunicadora">
+        <div class="card-info">
+            <h3>Maria, Rio Curiaú</h3>
+            <p>O som que salva a semente crioula. Relato sobre comunicação e soberania alimentar.</p>
+            <a href="#" class="btn-escutar">[ ESCUTAR RELATO ]</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1484156818044-c040038b0719?auto=format&fit=crop&w=400&q=80" class="foto-placeholder" alt="Comunicadora">
+        <div class="card-info">
+            <h3>Raimunda, Parteira</h3>
+            <p>A escuta como medicina: Saberes da cura compartilhados via ondas de rádio.</p>
+            <a href="#" class="btn-escutar">[ ESCUTAR RELATO ]</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=400&q=80" class="foto-placeholder" alt="Comunicadora">
+        <div class="card-info">
+            <h3>Juliana, Guardiã</h3>
+            <p>Mídias táticas no enfrentamento ao desmatamento digital nos territórios.</p>
+            <a href="#" class="btn-escutar">[ ESCUTAR RELATO ]</a>
+        </div>
+    </div>
+</main>
+
+<footer-player>
+    <span>AGORA: MARIA, QUILOMBO DO CURIAÚ</span>
+    <div class="onda-sonora"></div>
+    <span style="margin-left: auto;">01:45 / 03:00</span>
+</footer-player>
+
+</body>
+</html>
