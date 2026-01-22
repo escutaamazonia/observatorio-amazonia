@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBS_ESCUTA | Amazônia Legal</title>
     
-    <title>OBS_ESCUTA | Amazônia Legal - Vozes e Saberes</title>
-    <meta name="description" content="Observatório de Comunicação na Amazônia Legal: Epistemologia da Escuta e o protagonismo de mulheres comunicadoras.">
-
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Space+Mono&display=swap" rel="stylesheet">
     
     <style>
@@ -24,253 +22,131 @@
             font-family: 'Lora', serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-            padding-bottom: 120px;
+            padding-bottom: 120px; /* Espaço para o player no fundo */
         }
 
-        /* Efeito de Grão Sutil */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/stardust.png');
-            opacity: 0.05;
-            pointer-events: none;
-            z-index: 1000;
-        }
-
+        /* Menu Superior */
         header {
-            padding: 2rem;
+            padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: var(--borda);
+            background: var(--cor-papel);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .logo {
-            font-family: 'Space Mono', monospace;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
+        .logo { font-family: 'Space Mono', monospace; font-weight: bold; }
 
         nav a {
             font-family: 'Space Mono', monospace;
             text-decoration: none;
             color: var(--cor-jenipapo);
             margin-left: 1.5rem;
-            font-size: 0.85rem;
-            text-transform: uppercase;
+            font-size: 0.8rem;
         }
 
-        .hero {
+        /* Seção Sobre o Projeto */
+        .sobre {
             padding: 4rem 2rem;
-            max-width: 900px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        h1 {
-            font-size: 2.8rem;
-            color: var(--cor-urucum);
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
+        h1 { font-size: 2.5rem; color: var(--cor-urucum); }
+
+        /* A CAMADA DO MAPA */
+        .secao-mapa {
+            padding: 2rem;
+            border-top: var(--borda);
+            background: #fff;
         }
 
-        /* Seção de Mulheres Comunicadoras */
-        .grid-mulheres {
+        .mapa-container {
+            width: 100%;
+            height: 500px; /* Altura da janela do mapa */
+            border: var(--borda);
+        }
+
+        iframe { width: 100%; height: 100%; border: none; }
+
+        /* Grid de Comunicadoras */
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            padding: 0 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .card {
-            border: var(--borda);
-            padding: 1.5rem;
-            background: rgba(255,255,255,0.2);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 10px 10px 0px var(--cor-copaiba);
-        }
-
-        .foto-placeholder {
-            width: 100%;
-            height: 250px;
-            filter: grayscale(100%) sepia(15%);
-            margin-bottom: 1.5rem;
-            object-fit: cover;
-            border: 1px solid var(--cor-jenipapo);
-        }
-
-        .card-info h3 {
-            margin: 0;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            border-bottom: 1px solid var(--cor-jenipapo);
-            padding-bottom: 0.5rem;
-        }
-
-        .card-info p {
-            font-size: 0.95rem;
-            margin: 1rem 0 2rem 0;
-            min-height: 80px;
-        }
-
-        .btn-escutar {
-            display: block;
-            padding: 0.8rem;
-            border: var(--borda);
-            font-family: 'Space Mono', monospace;
-            font-size: 0.75rem;
-            text-decoration: none;
-            color: var(--cor-jenipapo);
-            text-align: center;
-            margin-top: auto;
-        }
-
-        .btn-escutar:hover {
-            background: var(--cor-jenipapo);
-            color: var(--cor-papel);
-        }
-
-        /* Seção de Parceiros Institucionais */
-        .parceiros {
+            gap: 2rem;
             padding: 4rem 2rem;
-            border-top: var(--borda);
-            background: rgba(255,255,255,0.1);
+        }
+
+        .card { border: var(--borda); padding: 1rem; }
+
+        /* Logos Institucionais */
+        .parceiros {
+            padding: 3rem;
             text-align: center;
-        }
-
-        .parceiros h2 {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            margin-bottom: 3rem;
-            letter-spacing: 2px;
-            opacity: 0.8;
-        }
-
-        .logos-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 4rem;
-            filter: grayscale(100%) contrast(1.2);
+            border-top: var(--borda);
+            filter: grayscale(100%);
             opacity: 0.7;
-            transition: all 0.4s ease;
         }
 
-        .logos-container:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
+        .logo-item { max-height: 50px; margin: 0 2rem; }
 
-        .logo-item {
-            max-height: 60px;
-            max-width: 140px;
-            object-fit: contain;
-        }
-
-        /* Rodapé / Player fixo */
-        .player-escuta {
+        /* Player no Rodapé */
+        .player {
             position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
+            bottom: 0; width: 100%;
             background: var(--cor-papel);
             border-top: var(--borda);
-            padding: 1.5rem 2rem;
+            padding: 1rem 2rem;
             display: flex;
             align-items: center;
             font-family: 'Space Mono', monospace;
-            font-size: 0.8rem;
-            box-sizing: border-box;
             z-index: 2000;
-        }
-
-        .onda-animada {
-            height: 20px;
-            width: 150px;
-            background: repeating-linear-gradient(90deg, var(--cor-copaiba), var(--cor-copaiba) 2px, transparent 4px, transparent 8px);
-            margin: 0 2rem;
-            opacity: 0.6;
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .logos-container { gap: 2rem; }
-            .player-escuta { flex-direction: column; text-align: center; gap: 1rem; }
-            .onda-animada { display: none; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">OBS_ESCUTA // AMAZÔNIA LEGAL</div>
+    <div class="logo">OBS_ESCUTA // AMAPÁ</div>
     <nav>
-        <a href="#">[ Territórios ]</a>
-        <a href="#">[ Vozes ]</a>
-        <a href="#">[ Sobre ]</a>
+        <a href="#mapa">[ TERRITÓRIOS ]</a>
+        <a href="#vozes">[ VOZES ]</a>
     </nav>
 </header>
 
-<section class="hero">
-    <h1>Vozes da Floresta:<br>Protagonismo Feminino</h1>
-    <p>Um repositório de tecnologias ancestrais e práticas comunicacionais de mulheres negras e indígenas na Amazônia Legal sob a perspectiva da Epistemologia da Escuta.</p>
+<section class="sobre">
+    <h1>Vozes da Floresta</h1>
+    <p>Este Observatório é fruto da pesquisa sobre a <strong>Epistemologia da Escuta</strong>, desenvolvida na <strong>UNIFAP</strong>. Investigamos as tecnologias ancestrais e o protagonismo de mulheres comunicadoras na Amazônia Legal.</p>
 </section>
 
-<main>
-    <div class="grid-mulheres">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?auto=format&fit=crop&w=600&q=80" class="foto-placeholder" alt="Maria">
-            <div class="card-info">
-                <h3>Maria, Rio Curiaú</h3>
-                <p>O som que salva a semente crioula. Relato sobre comunicação, ancestralidade e soberania alimentar no Amapá.</p>
-                <a href="#" class="btn-escutar">[ ESCUTAR RELATO ]</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1484156818044-c040038b0719?auto=format&fit=crop&w=600&q=80" class="foto-placeholder" alt="Raimunda">
-            <div class="card-info">
-                <h3>Raimunda, Parteira</h3>
-                <p>A escuta como medicina: Saberes da cura compartilhados via ondas de rádio em comunidades tradicionais.</p>
-                <a href="#" class="btn-escutar">[ ESCUTAR RELATO ]</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=600&q=80" class="foto-placeholder" alt="Juliana">
-            <div class="card-info">
-                <h3>Juliana, Guardiã</h3>
-                <p>Mídias táticas e tecnologias livres no enfrentamento ao desmatamento digital e proteção dos territórios.</p>
-                <a href="#" class="btn-escutar">[ ESCUTAR RELATO ]</a>
-            </div>
-        </div>
+<section id="mapa" class="secao-mapa">
+    <h2 style="font-family: 'Space Mono'; font-size: 1rem; text-align: center;">CARTOGRAFIA SENSÍVEL DA ESCUTA</h2>
+    <div class="mapa-container">
+        <iframe src="https://felt.com/embed/map/Amazona-Legal-Observatrio-z9B6C5D4"></iframe>
     </div>
+</section>
 
-    <section class="parceiros">
-        <h2>Apoio e Parcerias Institucionais</h2>
-        <div class="logos-container">
-            <img src="Brasao_UNIFAP.png" alt="UNIFAP" class="logo-item">
-            <img src="ilustraesfotos-6.png" alt="CNPq" class="logo-item">
-            <img src="unesp-logo-11.png" alt="UNESP" class="logo-item">
-            <img src="PCLA.jpg" alt="PCLA" class="logo-item">
-        </div>
-    </section>
+<main id="vozes" class="grid">
+    <div class="card">
+        <h3>Maria, Rio Curiaú</h3>
+        <p>Práticas comunicacionais no Quilombo.</p>
+        <button style="font-family: 'Space Mono'; border: 1px solid #000; background: none; padding: 5px;">[ ESCUTAR ]</button>
+    </div>
 </main>
 
-<div class="player-escuta">
-    <span>ESCUTANDO AGORA: MARIA, RIO CURIAÚ</span>
-    <div class="onda-animada"></div>
-    <span style="margin-left: auto;">01:45 / 03:00</span>
+<section class="parceiros">
+    <img src="Brasao_UNIFAP.png" class="logo-item">
+    <img src="ilustraesfotos-6.png" class="logo-item">
+    <img src="unesp-logo-11.png" class="logo-item">
+    <img src="PCLA.png" class="logo-item">
+</section>
+
+<div class="player">
+    <span>ESCUTANDO: RELATO QUILOMBOLA</span>
+    <div style="margin-left: auto;">01:30</div>
 </div>
 
 </body>
