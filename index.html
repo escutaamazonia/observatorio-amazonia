@@ -146,7 +146,26 @@
             margin-left: 2rem;
         }
 
-    </style>
+    </style>footer-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--cor-papel);
+    border-top: var(--borda);
+    padding: 1.5rem 2rem; /* Aumentamos o padding vertical de 1 para 1.5 */
+    display: flex;
+    align-items: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    z-index: 100;
+}
+
+/* Adicione este ajuste para o corpo do site não ficar escondido atrás do rodapé */
+body {
+    padding-bottom: 80px; 
+}
 </head>
 <body>
 
