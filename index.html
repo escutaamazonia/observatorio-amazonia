@@ -18,6 +18,8 @@
             --borda: 1.5px solid var(--cor-jenipapo);
         }
 
+        html { scroll-behavior: smooth; }
+
         body {
             background-color: var(--cor-papel);
             color: var(--cor-jenipapo);
@@ -25,7 +27,6 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            padding-bottom: 120px;
         }
 
         /* Efeito de Grão Sutil */
@@ -40,11 +41,15 @@
         }
 
         header {
-            padding: 2rem;
+            padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: var(--borda);
+            background: var(--cor-papel);
+            position: sticky;
+            top: 0;
+            z-index: 2000;
         }
 
         .logo {
@@ -63,24 +68,50 @@
         }
 
         .hero {
-            padding: 4rem 2rem;
+            padding: 6rem 2rem;
             max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             color: var(--cor-urucum);
             line-height: 1.1;
             margin-bottom: 1.5rem;
         }
 
+        /* ABA DA CARTOGRAFIA (MAPA) */
+        .secao-cartografia {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            border-top: var(--borda);
+            border-bottom: var(--borda);
+            background: #fff;
+        }
+
+        .cartografia-header {
+            background: var(--cor-papel);
+            padding: 1rem;
+            border-bottom: var(--borda);
+            text-align: center;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .mapa-container { flex-grow: 1; position: relative; }
+        iframe { width: 100%; height: 100%; border: none; }
+
         /* Seção de Mulheres Comunicadoras */
+        .vozes-container { padding: 4rem 2rem; }
         .grid-mulheres {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
-            padding: 0 2rem;
-            margin-bottom: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .card {
@@ -106,21 +137,6 @@
             border: 1px solid var(--cor-jenipapo);
         }
 
-        .card-info h3 {
-            margin: 0;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            border-bottom: 1px solid var(--cor-jenipapo);
-            padding-bottom: 0.5rem;
-        }
-
-        .card-info p {
-            font-size: 0.95rem;
-            margin: 1rem 0 2rem 0;
-            min-height: 80px;
-        }
-
         .btn-escutar {
             display: block;
             padding: 0.8rem;
@@ -133,26 +149,14 @@
             margin-top: auto;
         }
 
-        .btn-escutar:hover {
-            background: var(--cor-jenipapo);
-            color: var(--cor-papel);
-        }
+        .btn-escutar:hover { background: var(--cor-jenipapo); color: var(--cor-papel); }
 
-        /* Seção de Parceiros Institucionais */
+        /* Parceiros Institucionais */
         .parceiros {
             padding: 4rem 2rem;
-            border-top: var(--borda);
             background: rgba(255,255,255,0.1);
             text-align: center;
-        }
-
-        .parceiros h2 {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            margin-bottom: 3rem;
-            letter-spacing: 2px;
-            opacity: 0.8;
+            border-top: var(--borda);
         }
 
         .logos-container {
@@ -161,74 +165,69 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 4rem;
-            filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%);
             opacity: 0.7;
-            transition: all 0.4s ease;
+            transition: 0.4s;
         }
 
-        .logos-container:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-
-        .logo-item {
-            max-height: 60px;
-            max-width: 140px;
-            object-fit: contain;
-        }
+        .logos-container:hover { filter: grayscale(0%); opacity: 1; }
+        .logo-item { max-height: 60px; max-width: 140px; object-fit: contain; }
 
         /* Rodapé / Player fixo */
         .player-escuta {
             position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
+            bottom: 0; left: 0; width: 100%;
             background: var(--cor-papel);
             border-top: var(--borda);
-            padding: 1.5rem 2rem;
+            padding: 1rem 2rem;
             display: flex;
             align-items: center;
             font-family: 'Space Mono', monospace;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             box-sizing: border-box;
             z-index: 2000;
         }
 
         .onda-animada {
-            height: 20px;
-            width: 150px;
+            height: 15px; width: 100px;
             background: repeating-linear-gradient(90deg, var(--cor-copaiba), var(--cor-copaiba) 2px, transparent 4px, transparent 8px);
-            margin: 0 2rem;
-            opacity: 0.6;
+            margin: 0 1.5rem;
+            opacity: 0.5;
         }
 
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
-            .logos-container { gap: 2rem; }
-            .player-escuta { flex-direction: column; text-align: center; gap: 1rem; }
-            .onda-animada { display: none; }
+            .secao-cartografia { height: 60vh; }
+            .player-escuta { font-size: 0.65rem; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">OBS_ESCUTA // AMAZÔNIA LEGAL</div>
+    <div class="logo">OBS_ESCUTA // AMAPÁ</div>
     <nav>
-        <a href="#">[ Territórios ]</a>
-        <a href="#">[ Vozes ]</a>
-        <a href="#">[ OCA Legal ]</a>
-        <a href="#">[ OCApédia ]</a>
-        <a href="#">[ Sobre ]</a>
+        <a href="#cartografia">[ Cartografia ]</a>
+        <a href="#vozes">[ Vozes ]</a>
+        <a href="#sobre">[ Sobre ]</a>
     </nav>
 </header>
 
-<section class="hero">
+<section class="hero" id="sobre">
     <h1>Vozes da Floresta:<br>Protagonismo Feminino</h1>
-    <p>Um repositório de tecnologias ancestrais e práticas comunicacionais de mulheres negras, indígenas e quilombolas na Amazônia Legal, sob a perspectiva da Epistemologia da Escuta.</p>
+    <p>Um repositório de tecnologias ancestrais e práticas comunicacionais de mulheres negras, indígenas e quilombolas na Amazônia Legal, sob a perspectiva da <strong>Epistemologia da Escuta</strong>.</p>
 </section>
 
-<main>
+<section id="cartografia" class="secao-cartografia">
+    <div class="cartografia-header">
+        TERRITÓRIOS DE RESISTÊNCIA COMUNICACIONAL
+    </div>
+    <div class="mapa-container">
+        <iframe src="COLE_O_LINK_DO_FELT_AQUI" title="Mapa da Escuta"></iframe>
+    </div>
+</section>
+
+<main id="vozes" class="vozes-container">
     <div class="grid-mulheres">
         <div class="card">
             <img src="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?auto=format&fit=crop&w=600&q=80" class="foto-placeholder" alt="Maria">
@@ -257,33 +256,21 @@
             </div>
         </div>
     </div>
-
-    <section class="parceiros">
-        <h2>Apoio e Parcerias Institucionais</h2>
-<div class="logos-container">
-    <a href="https://www.unifap.br/" target="_blank" title="Ir para o site da UNIFAP">
-        <img src="Brasao_UNIFAP.png" alt="UNIFAP" class="logo-item">
-    </a>
-
-    <a href="https://www.gov.br/cnpq/pt-br" target="_blank" title="Ir para o site do CNPq">
-        <img src="ilustraesfotos-6.png" alt="CNPq" class="logo-item">
-    </a>
-
-    <a href="https://https://www.faac.unesp.br/" target="_blank" title="Ir para o site da UNESP">
-        <img src="unesp-logo-11.png" alt="UNESP" class="logo-item">
-    </a>
-
-    <a href="https://www.facebook.com/pclaunesp/" target="_blank" title="Ir para o site do PCLA">
-        <img src="PCLA.jpg" alt="PCLA" class="logo-item">
-    </a>
-</div>
-    </section>
 </main>
 
+<section class="parceiros">
+    <div class="logos-container">
+        <a href="https://www.unifap.br/" target="_blank"><img src="Brasao_UNIFAP.png" alt="UNIFAP" class="logo-item"></a>
+        <a href="https://www.gov.br/cnpq/pt-br" target="_blank"><img src="ilustraesfotos-6.png" alt="CNPq" class="logo-item"></a>
+        <a href="https://www.faac.unesp.br/" target="_blank"><img src="unesp-logo-11.png" alt="UNESP" class="logo-item"></a>
+        <a href="https://www.facebook.com/pclaunesp/" target="_blank"><img src="PCLA.jpg" alt="PCLA" class="logo-item"></a>
+    </div>
+</section>
+
 <div class="player-escuta">
-    <span>ESCUTANDO AGORA: MARIA, RIO CURIAÚ</span>
+    <span>AGORA ESCUTANDO: CARTOGRAFIA DE MULHERES NA AMAZÔNIA</span>
     <div class="onda-animada"></div>
-    <span style="margin-left: auto;">01:45 / 03:00</span>
+    <span style="margin-left: auto;">[ EM DESENVOLVIMENTO ]</span>
 </div>
 
 </body>
