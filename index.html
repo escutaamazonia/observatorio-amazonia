@@ -258,46 +258,88 @@
         </div>
     </div>
 </main>
-<section id="redes" style="padding: 4rem 2rem; border-top: var(--borda);">
-    <h2 style="font-family: 'Space Mono', monospace; font-size: 1rem; text-align: center; margin-bottom: 3rem; color: var(--cor-urucum);">
+<section id="redes" style="padding: 5rem 2rem; border-top: var(--borda); background-color: var(--cor-papel);">
+    <h2 style="font-family: 'Space Mono', monospace; font-size: 0.9rem; text-align: center; margin-bottom: 4rem; color: var(--cor-urucum); letter-spacing: 3px;">
         [ REDES DE ARTICULAÇÃO E RESISTÊNCIA ]
     </h2>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; max-width: 1100px; margin: 0 auto;">
         
-        <a href="https://www.instagram.com/amnboficial/" target="_blank" style="text-decoration: none; color: inherit;">
-            <div class="card" style="text-align: center; min-height: auto; padding: 1rem;">
-                <h3 style="font-size: 0.8rem; border: none; padding: 0;">AMNB</h3>
-                <p style="font-size: 0.7rem; min-height: auto; margin: 0.5rem 0;">Articulação de Mulheres Negras Brasileiras</p>
-                <span style="font-family: 'Space Mono'; font-size: 0.6rem; color: var(--cor-urucum);">@amnboficial</span>
+        <a href="https://www.instagram.com/amnboficial/" target="_blank" class="link-rede">
+            <div class="card-limpo">
+                <span class="tag-rede">@amnboficial</span>
+                <h3>AMNB</h3>
+                <p>Articulação de Mulheres Negras Brasileiras</p>
             </div>
         </a>
 
-        <a href="https://www.instagram.com/portalgeledes/" target="_blank" style="text-decoration: none; color: inherit;">
-            <div class="card" style="text-align: center; min-height: auto; padding: 1rem;">
-                <h3 style="font-size: 0.8rem; border: none; padding: 0;">GELEDÉS</h3>
-                <p style="font-size: 0.7rem; min-height: auto; margin: 0.5rem 0;">Instituto da Mulher Negra</p>
-                <span style="font-family: 'Space Mono'; font-size: 0.6rem; color: var(--cor-urucum);">@portalgeledes</span>
+        <a href="https://www.instagram.com/portalgeledes/" target="_blank" class="link-rede">
+            <div class="card-limpo">
+                <span class="tag-rede">@portalgeledes</span>
+                <h3>GELEDÉS</h3>
+                <p>Instituto da Mulher Negra</p>
             </div>
         </a>
 
-        <a href="https://www.instagram.com/anmigaorg/" target="_blank" style="text-decoration: none; color: inherit;">
-            <div class="card" style="text-align: center; min-height: auto; padding: 1rem;">
-                <h3 style="font-size: 0.8rem; border: none; padding: 0;">ANMIGA</h3>
-                <p style="font-size: 0.7rem; min-height: auto; margin: 0.5rem 0;">Articulação Nacional das Mulheres Indígenas</p>
-                <span style="font-family: 'Space Mono'; font-size: 0.6rem; color: var(--cor-urucum);">@anmigaorg</span>
+        <a href="https://www.instagram.com/anmigaorg/" target="_blank" class="link-rede">
+            <div class="card-limpo">
+                <span class="tag-rede">@anmigaorg</span>
+                <h3>ANMIGA</h3>
+                <p>Articulação Nacional das Mulheres Indígenas</p>
             </div>
         </a>
 
-        <a href="https://www.instagram.com/fonatrans/" target="_blank" style="text-decoration: none; color: inherit;">
-            <div class="card" style="text-align: center; min-height: auto; padding: 1rem;">
-                <h3 style="font-size: 0.8rem; border: none; padding: 0;">FONATRANS</h3>
-                <p style="font-size: 0.7rem; min-height: auto; margin: 0.5rem 0;">Fórum Nacional de Travestis e Transexuais Negras</p>
-                <span style="font-family: 'Space Mono'; font-size: 0.6rem; color: var(--cor-urucum);">@fonatrans</span>
+        <a href="https://www.instagram.com/fonatrans/" target="_blank" class="link-rede">
+            <div class="card-limpo">
+                <span class="tag-rede">@fonatrans</span>
+                <h3>FONATRANS</h3>
+                <p>Fórum Nacional de Travestis e Transexuais Negras</p>
             </div>
         </a>
 
     </div>
+</section>
+
+<style>
+    .link-rede { text-decoration: none; color: inherit; }
+    
+    .card-limpo {
+        text-align: center;
+        padding: 2rem 1rem;
+        border-bottom: 1px solid transparent;
+        transition: all 0.3s ease;
+    }
+
+    .card-limpo:hover {
+        border-bottom: 1px solid var(--cor-urucum);
+        transform: translateY(-5px);
+    }
+
+    .tag-rede {
+        font-family: 'Space Mono', monospace;
+        font-size: 0.65rem;
+        color: var(--cor-urucum);
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .card-limpo h3 {
+        font-family: 'Space Mono', monospace;
+        font-size: 1.4rem;
+        margin: 0;
+        font-weight: bold;
+        color: var(--cor-jenipapo);
+    }
+
+    .card-limpo p {
+        font-family: 'Lora', serif;
+        font-size: 0.85rem;
+        margin-top: 1rem;
+        line-height: 1.4;
+        opacity: 0.8;
+    }
+</style>
 </section>
 <section class="parceiros">
         <h2>Apoio e Parcerias Institucionais</h2>
